@@ -35,7 +35,7 @@ wishlist.forEach(item => {
     <img src="${item.image}">
     <h3>${item.name}</h3>
     <a href="${item.link}" target="_blank" class="buy-btn">
-      Buy & Surprise Me 🎁
+      Check on Amazon 🎁
     </a>
   `;
 
