@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,56 +12,84 @@ body {
 }
 
 .container {
-  padding: 20px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 h1 {
   margin-top: 10px;
-  font-size: 26px;
+  font-size: clamp(20px, 5vw, 28px);
 }
 
 .subtitle {
   opacity: 0.8;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
+  font-size: 14px;
 }
 
 #wishlist {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
 }
 
+/* ✅ CARD RESPONSIVE */
 .card {
   background: white;
   color: black;
   border-radius: 14px;
-  padding: 14px;
+  padding: 12px;
   box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* ✅ IMAGE RESPONSIVE */
 .card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: contain;
 }
 
 .card h3 {
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px 0;
+  min-height: 38px;
 }
 
-.price {
-  color: green;
-  font-weight: bold;
-}
-
+/* ✅ BUTTON RESPONSIVE */
 .buy-btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 16px;
+  padding: 10px 12px;
   background: #ff4141;
   color: white;
   border-radius: 8px;
   text-decoration: none;
+  font-size: 14px;
   font-weight: bold;
 }
+
+/* ✅ MOBILE EXTRA OPTIMIZATION */
+/* ✅ FORCE SINGLE CARD PER ROW ON SMALL MOBILES */
+@media (max-width: 480px) {
+  #wishlist {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .buy-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+
