@@ -39,10 +39,11 @@ wishlist.forEach(item => {
     <img src="${item.image}">
     <h3>${item.name}</h3>
     <a href="${item.link}" target="_blank" class="buy-btn">
-      Check on {item.site} 🎁
+      Check on ${item.site} 🎁
     </a>
   `;
 
   container.appendChild(card);
 });
+
 
